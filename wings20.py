@@ -1,30 +1,22 @@
+import os
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout, QPushButton
 from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QPixmap, QPalette, QBrush
 
 #crear una ventana de interfaz 
 class Windows(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Mi Ventana de Inicio")
-        self.setGeometry(100, 100, 400, 200)
+        self.setGeometry(100, 100, 600, 400)
         
-        #estilo y colores
+        #ruta de acceso a  la imagen de fondo
+        self.background_path = os.path.abspath(r"C:/Users/nexxus/Downloads/Fascinating-Examples-Of-Firefly-Photography00002-1-255x385.jpg")
+        print("Ruta usada:", self.background_path)
+        print("Imagen Cargada?", not QPixmap(self.background_path).isNull())
         
-        TITLE_COLOR = "#2E86C1"
-        BACKGROUND_COLOR = "#F2F3F4"
-        #self.setStyleSheet(f"background-color: {BACKGROUND_COLOR}; color: {TITLE_COLOR};")
-        #fondo de pantalla
-        self.setStyleSheet("""
-            QWidget {{ 
-                background-color: {BACKGROUND_COLOR};
-                color: {TITLE_COLOR};
-                background-image: url('Fascinating-Examples-Of-Firefly-Photography00002-1-255x385.jpg');
-                background-repeat: no-repeat;
-                background-position: center;   
-                background-size: cover;
-            }}
-        """)
+        
         #crear un QLabel para el titulo
         #titulo ventana de inicio
         self.acceptDropsTitle = QLabel("Bienvenido a mi APP", self)
@@ -54,6 +46,22 @@ class Windows(QWidget):
         layout.addWidget(self.message)
         layout.setAlignment(Qt.AlignCenter)
         self.setLayout(layout)
+    
+        self.update_background()
+    
+    def resizeEvent(self, event):
+        #se ejecuta cada vez que la ventana se cambia de tamanio
+        self.update_background()
+        super().resizeEvent(event)
+        
+    def update_background(self):
+        #escala la imagen al tamanio actual de la ventana
+        pixmap = QPixmap(self.background_path).scaled(self.size(), Qt.KeepAspectRatioByExpanding, Qt.SmoothTransformation)
+        palette = QPalette()
+        palette.setBrush(QPalette.Window, QBrush(pixmap))
+        self.setPalette(palette)
+        self.setAutoFillBackground(True)
+        #print(QPixmap(self.background_path).isNull())
         
     def start_app(self):
         print("La APP esta Iniciando...\n")
@@ -66,3 +74,4 @@ if __name__ == "__main__":
     wind = Windows()
     wind.show()
     sys.exit(app.exec_())
+    

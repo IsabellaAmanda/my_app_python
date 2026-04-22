@@ -1,0 +1,82 @@
+{
+    "Imagenes": [
+        {
+            "ID": 1,
+            "Files": "2017-12-14-19-35-31.jpg",
+            "Tags": [
+                "naturaleza",
+                "exterior"
+            ],
+            "metadata": {
+                "ancho": 5573,
+                "alto": 3715
+            }
+        },
+        {
+            "id": 2,
+            "Files": "OIP.jpeg",
+            "Tags": [
+                "robot",
+                "dise\u00f1o"
+            ],
+            "metadata": {
+                "ancho": 540,
+                "alto": 960
+            }
+        },
+        {
+            "id": 3,
+            "Files": "DSC03939.JPG",
+            "Tags": [
+                "cerro",
+                "naturaleza"
+            ],
+            "metadata": {
+                "ancho": 540,
+                "alto": 960
+            }
+        },
+        {
+            "Files": "2017-12-14-19-35-31.jpg",
+            "Tags": [
+                "Nuevo"
+            ]
+        },
+        {
+            "Files": "2017-12-14-19-35-31.jpg",
+            "Tags": [
+                "Nuevo"
+            ]
+        },
+        {
+            "Files": "DSC03939.JPG",
+            "Tags": [
+                "Nuevo"
+            ]
+        },
+        {
+            "Files": "perrito.png",
+            "Tags": [
+                "Nuevo"
+            ]
+        },
+        {
+            "Files": "MJ.png",
+            "Tags": [
+                "Nuevo"
+            ]
+        },
+        {
+            "Files": "moonwalker.png",
+            "Tags": [
+                "Michael Jackson-King of Pop"
+            ]
+        },
+        {
+            "Files": "michael-jackson-mj.gif",
+            "Tags": [
+                "Nuevo"
+            ]
+        }
+    ]
+}
